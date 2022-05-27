@@ -1,3 +1,10 @@
-class Solution:
-    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-        return len(max("".join(map(str, nums)).split("0")))
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        cnt , mx = 0, 0
+        for data in nums : 
+            if(data) : 
+                cnt += 1
+            else : 
+                cnt = 0
+            mx = max(mx,cnt)
+        return mx
